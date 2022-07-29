@@ -21,6 +21,7 @@ function calculateProfitLoss(initial,quantity,current){
         let loss=(initial-current)*quantity;
         let lossPercent=(loss/initial)*100;
         output(`Hey the loss is ${loss} and the loss percentage is ${lossPercent.toFixed(2)}%.`);
+        lossGif();
         if(lossPercent>0.1){
             lossRed();
         }else{
