@@ -19,7 +19,7 @@ calculateBtn.addEventListener('click',clickHandler);
 function calculateProfitLoss(initial,quantity,current){
     if(initial>current){
         let loss=(initial-current)*quantity;
-        let lossPercent=(loss/initial)*100;
+        let lossPercent=(loss/(initial*quantity))*100;
         output(`Hey the loss is ${loss} and the loss percentage is ${lossPercent.toFixed(2)}%.`);
         showLossGif();
         if(lossPercent>0.1){
@@ -29,7 +29,7 @@ function calculateProfitLoss(initial,quantity,current){
         }
     }else if(current>initial){
         let profit=(current-initial)*quantity;
-        let profitPercent=(profit/initial)*100;
+        let profitPercent=(profit/(initial*quantity))*100;
         output(`Hey the profit is ${profit} and the profit percent is ${profitPercent.toFixed(2)}%.`)
         showProfitGif();
         if(profitPercent>0.1){
