@@ -8,6 +8,8 @@ const profitGif= document.querySelector('.profit-gif');
 const lossGif=document.querySelector('.loss-gif');
 const NoProfitLossGif=document.querySelector('.noPain-gif');
 
+// const header=document.querySelector('.heading');
+
 profitGif.style.display='none';
 lossGif.style.display='none';
 NoProfitLossGif.style.display='none';
@@ -19,18 +21,26 @@ function calculateProfitLoss(initial,quantity,current){
         let loss=(initial-current)*quantity;
         let lossPercent=(loss/initial)*100;
         output(`Hey the loss is ${loss} and the loss percentage is ${lossPercent.toFixed(2)}%.`);
-        ShowLossGif();
-        console.log("ok");
+        if(lossPercent>0.1){
+            lossRed();
+        }else{
+            defaultlayout();
+        }
     }else if(current>initial){
         let profit=(current-initial)*quantity;
         let profitPercent=(profit/initial)*100;
         output(`Hey the profit is ${profit} and the profit percent is ${profitPercent.toFixed(2)}%.`)
-
         showProfitGif();
-
+        if(profitPercent>0.1){
+            profitGreen();
+        }else{
+            defaultlayout();
+        }
+        
     }else{
         output( `No pain no gain and no gain no pain`);
         showNoPainGif();
+        defaultlayout();
     }
 }
 
@@ -60,6 +70,20 @@ function showNoPainGif(){
 
 }
 
+function profitGreen(){
+    // header.style.backgroundColor="green";
+    document.body.style.backgroundColor = "green";
+
+}
+function lossRed(){
+    // header.style.backgroundColor="green";
+    document.body.style.backgroundColor = "red";
+
+}
+function defaultlayout() {
+    document.main.style.backgroundColor = "var(--secondary-color)";
+
+}
 
 function clickHandler(){
     let ip_price=Number(initialPrice.value);

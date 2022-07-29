@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@600&display=swap');
+
+
+:root{
+    --primary-color:#b8a16e;
+    --secondary-color:#5d6eae;
+}
+body{
+    background-color: var(--primary-color);
+    font-family: 'Ibarra Real Nova', serif;
+    text-align: center;
+    color:white;
+    padding: 0;
+    margin: 0;
+}
+
+h1{
+    padding: 0;
+    margin: 0;
+}
+
+.heading{
+    background-color: var(--secondary-color);
+    font-size:2.5rem;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+} */
+
+/* .up,.down{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
+.up div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+label{
+    font-size: 1.5rem;
+}
+input{
+    font-size: 1.2rem;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+    border: 3px solid var(--secondary-color);
+
+}
+
+#calculate-btn{
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    /* background-color: var(--secondary-color); */
+    border: 3px solid var(--secondary-color);
+}
+
+#calculate-btn:hover{
+    background-color: var(--secondary-color);
+    color: white;
+    border: 3px solid white;
+}
+
+/*message*/
+#output-message{
+    font-size: 1.5rem;
+    margin: 0.5rem;
+}
+
+
+/*gif*/
+.down {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gif{
+    width: 18rem;
+    height: 12rem;
+    border-radius: 0.5rem;
+}
