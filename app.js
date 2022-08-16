@@ -17,6 +17,9 @@ NoProfitLossGif.style.display='none';
 calculateBtn.addEventListener('click',clickHandler);
 
 function calculateProfitLoss(initial,quantity,current){
+    if(initial<=0 || quantity<=0 || current <=0){
+        checkNegative(initial,quantity,current);
+    }else{
     if(initial>current){
         let loss=(initial-current)*quantity;
         let lossPercent=(loss/(initial*quantity))*100;
@@ -44,7 +47,29 @@ function calculateProfitLoss(initial,quantity,current){
         defaultlayout();
     }
 }
+}
 
+function checkNegative(initial,quantity,current){
+    if(initial<=0 && quantity<=0 && current <=0){
+        output(`Price and Quantity should be greater than 0.`)
+    }
+    else if (quantity<=0 && quantity <=0){
+        output(`Initial price and Quantity  should be greater than 0.`)
+    }
+    else if (quantity<=0 && current <=0){
+        output(`Quantity and Current price should be greater than 0.`)
+    }
+    else if(initial<=0 && current <=0){
+        output(`Initial and Current price should be greater than 0.`)
+    }
+    else if(initial<=0){
+        output(`Initial Price should be greater than 0.`);
+    }else if(quantity<=0){
+        output(`Quantity should be greater than 0.`);
+    }else if(current<=0){
+        output(`Current Price should be greater than 0.`);
+    }
+}
 
 function output(msg){
     message.innerHTML=msg;
